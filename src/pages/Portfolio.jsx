@@ -8,6 +8,8 @@ import Project from './Project';
 
 const Portfolio = () => {
   const location = useLocation();
+
+  // search state for search query
   const [search, setSearch] = useState('');
 
   const tabs = [
@@ -27,9 +29,10 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="m-4 rounded-lg p-4 border border-gray-200 bg-white w-[1000px]">
+    <div className="w-auto sm:h-96 m-4 rounded-lg p-4 border border-gray-200 bg-white">
       <h1 className="font-semibold text-xl">Portfolio</h1>
-      <div className="flex mb-4 justify-between">
+
+      <div className="flex gap-3 justify-between flex-wrap">
         <div className="flex">
           {tabs.map((tab) => (
             <Link
@@ -56,6 +59,7 @@ const Portfolio = () => {
         </div>
       </div>
 
+      {/* portfolio tab routes */}
       <Routes>
 
         <Route path="/" element={<Navigate to="/portfolio/project" replace />} />

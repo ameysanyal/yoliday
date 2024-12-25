@@ -7,6 +7,7 @@ import p4 from '/profile4.jpg'
 import p5 from '/profile4.jpg'
 const Project = ({ search }) => {
 
+    // mock data
     const projects = [
         {
             title: 'AI-Powered Education Tools',
@@ -45,6 +46,7 @@ const Project = ({ search }) => {
         },
     ];
 
+    // function for filtering projects based on search query
     const filteredProjects = projects.filter(
         (project) => {
             return project.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -54,7 +56,7 @@ const Project = ({ search }) => {
         }
     );
 
-    return (<div className="flex flex-col overflow-y-auto h-[440px] space-y-3">
+    return (<div className="mt-4 flex flex-col overflow-y-auto h-[370px] sm:h-[440px] space-y-3">
         {filteredProjects.length > 0 ? (
             filteredProjects.map((project, idx) => <PortfolioCard key={idx} {...project} />)
         ) : (

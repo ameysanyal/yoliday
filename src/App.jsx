@@ -9,10 +9,12 @@ import Profile from './pages/Profile';
 const App = () => {
   return (
     <Router>
-      <div className="flex">
+      <div className="flex overflow-hidden">
         <Sidebar />
         <div className="flex-1">
           <Navbar />
+
+          {/* Sidebar routes */}
           <Routes>
             <Route path="*" element={<Portfolio />} />
             <Route path="/dashboard" element={<Dashboard />} />

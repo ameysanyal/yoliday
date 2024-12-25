@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Home, File, Inbox, User, Menu } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../../public/yoliday-logo.png'
+import logo from '/yoliday-logo.png'
 
 const Sidebar = () => {
+
+  // isCollapsed state for collapsable sidebar
   const [isCollapsed, setIsCollapsed] = useState(false);
   const location = useLocation()
 
@@ -27,13 +29,18 @@ const Sidebar = () => {
       className={`bg-[#DF5532] ${isCollapsed ? 'w-16' : 'w-52'
         } h-screen transition-all`}
     >
+      {/* logo */}
       <img src={logo} alt="yoliday" className='w-32 p-2' />
+
+      {/* sibebar toggle button */}
       <button
         className="text-white p-2"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <Menu />
       </button>
+
+
       <nav className="mt-5">
         <Link to="/dashboard" className={`${location.pathname === "/dashboard" && "bg-gradient-to-r from-white/50 to-[#DF5532]"}  flex items-center p-3 pl-4 text-white hover:bg-gradient-to-r from-white/50 to-[#DF5532]`}>
           <Home className="mr-2" />
