@@ -56,7 +56,7 @@ const Project = ({ search }) => {
         }
     );
 
-    return (<div className="mt-4 flex flex-col overflow-y-auto h-[370px] sm:h-[440px] space-y-3">
+    return (<div className="mt-4 flex flex-col overflow-y-auto w-[800px] h-[380px] sm:h-[440px] space-y-3">
         {filteredProjects.length > 0 ? (
             filteredProjects.map((project, idx) => <PortfolioCard key={idx} {...project} />)
         ) : (

@@ -29,7 +29,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="w-auto sm:h-96 m-4 rounded-lg p-4 border border-gray-200 bg-white">
+    <div className="w-96 sm:w-auto h-auto m-4 rounded-lg p-4 border border-gray-200 bg-white">
       <h1 className="font-semibold text-xl">Portfolio</h1>
 
       <div className="flex gap-3 justify-between flex-wrap">
@@ -39,7 +39,7 @@ const Portfolio = () => {
               key={tab.name}
               to={tab.path}
               className={`border-b-2 ${isActiveTab(tab.path) ? 'border-b-[#DF5532]' : 'border-b-transparent'
-                } px-4 py-2 transition-colors hover:text-gray-700`}
+                } px-2 py-1 sm:px-4 sm:py-2 transition-colors hover:text-gray-700`}
             >
               {tab.name}
             </Link>
@@ -51,7 +51,7 @@ const Portfolio = () => {
             value={search}
             onChange={handleSearch}
             placeholder="Search a Project.."
-            className="border border-black rounded-lg mr-16 p-0.5 pl-2 outline-none w-80 focus:border-[#DF5532] transition-colors"
+            className="border border-black rounded-lg mr-16 p-0.5 pl-2 outline-none w-72 sm:w-80 focus:border-[#DF5532] transition-colors"
           />
           <div className="absolute right-[68px] bg-[#DF5532] rounded-lg p-0.5 cursor-pointer hover:bg-[#c94a2b] transition-colors">
             <Search className="text-white" size={20} />
